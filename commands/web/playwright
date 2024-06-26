@@ -1,7 +1,7 @@
 #!/bin/sh
 #ddev-generated
 
-cd tests/Playwright || exit 1
+cd "${PLAYWRIGHT_TEST_DIR}" || exit 1
 
 # If $@ contains 'test --ui' we need to add the --ui-host option to the command
 if echo "$@" | grep -q "test --ui"; then
@@ -15,6 +15,7 @@ if echo "$@" | grep -q "show-report"; then
   set -- "$@" --host="0.0.0.0" --port="9324"
 fi
 
+echo "Serving HTML report at ${DDEV_PRIMARY_URL}:9324. Press Ctrl+C to quit"
 
 if [ -f yarn.lock ]; then
   yarn && yarn playwright "$@"
