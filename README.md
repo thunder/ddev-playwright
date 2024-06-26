@@ -19,6 +19,16 @@ ddev playwright test --ui
 ddev playwright show-report
 ```
 
+### Access ddev website in tests
+
+Add the follwoing code to yout playwright.config.js file:
+
+```javascript
+  use: {
+    baseURL: process.env.IS_DDEV_PROJECT === 'true' ? 'http://web' : undefined,
+  }
+```
+
 ## Codegen
 
 The codegen command is not supported yet. You can use [Playwright CRX](https://github.com/ruifigueira/playwright-crx) chrome extension instead.
