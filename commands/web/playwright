@@ -19,6 +19,7 @@ fi
 
 if echo "$@" | grep -q "codegen"; then
   echo "This command is not supported yet."
+  exit 1
 fi
 
 if [ -f yarn.lock ]; then

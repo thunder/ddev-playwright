@@ -7,7 +7,7 @@ DDEV Playwright is a DDEV addon that provides a simple way to run Playwright tes
 ```bash
 # Install the ddev addon
 ddev get thunder/ddev-playwright
-# Install playwright at tests/playwright
+# Install playwright at tests/Playwright
 ddev install-playwright
 # Restart ddev
 ddev restart
