@@ -1,0 +1,18 @@
+#ddev-generated
+services:
+  playwright:
+    container_name: ddev-${DDEV_SITENAME}-playwright
+    image: mcr.microsoft.com/playwright:focal
+    entrypoint:  'bash -c "cd /home/pwuser && npx -y playwright@1.45.0 run-server --port 3000 --host 0.0.0.0"'
+    networks: [default, ddev_default]
+    restart: "no"
+    # These labels ensure this service is discoverable by ddev.
+    labels:
+      com.ddev.site-name: ${DDEV_SITENAME}
+      com.ddev.approot: $DDEV_APPROOT
+    volumes:
+      - ".:/mnt/ddev_config"
+      - "ddev-global-cache:/mnt/ddev-global-cache"
+  web:
+    links:
+      - playwright
