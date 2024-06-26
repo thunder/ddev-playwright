@@ -63,6 +63,7 @@ project_files:
  - docker-compose.playwright.yaml
  - config.playwright.yaml
  - commands/web/playwright
+ - commands/host/install-playwright
 
 # List of files and directories that are copied into the global .ddev directory
 # DDEV environment variables can be interpolated into these filenames
