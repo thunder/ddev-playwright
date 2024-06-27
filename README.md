@@ -21,11 +21,11 @@ ddev playwright show-report
 
 ### Access ddev website in tests
 
-Add the follwoing code to yout playwright.config.js file:
+Add the following code to your playwright.config.js file:
 
 ```javascript
   use: {
-    baseURL: process.env.IS_DDEV_PROJECT === 'true' ? 'http://web' : undefined,
+    baseURL: process.env.PLAYWRIGHT_BASE_URL
   }
 ```
 

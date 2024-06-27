@@ -7,6 +7,7 @@
 web_environment:
   - PW_TEST_CONNECT_WS_ENDPOINT=ws://playwright:3000
   - PLAYWRIGHT_TEST_DIR=tests/Playwright
+  - PLAYWRIGHT_BASE_URL=http://web
 web_extra_exposed_ports:
   - name: playwright-report
     container_port: 9323
