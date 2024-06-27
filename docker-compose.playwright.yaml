@@ -2,8 +2,8 @@
 services:
   playwright:
     container_name: ddev-${DDEV_SITENAME}-playwright
-    image: mcr.microsoft.com/playwright:focal
-    entrypoint:  'bash -c "cd /home/pwuser && npx -y playwright@1.45.0 run-server --port 3000 --host 0.0.0.0"'
+    image: mcr.microsoft.com/playwright:noble
+    entrypoint:  'bash -c "cd /home/pwuser && npx -y playwright@latest run-server --port 3000"'
     networks: [default, ddev_default]
     restart: "no"
     # These labels ensure this service is discoverable by ddev.
